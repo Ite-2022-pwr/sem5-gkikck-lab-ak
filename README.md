@@ -1,2 +1,2 @@
-# sem5-gkikck-lab-a
+# Grafika komputerowa i komunikacja człowiek komputer - laboratiora
  
