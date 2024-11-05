@@ -36,7 +36,7 @@ def draw_rectangle(x: float, y: float, a: float, b: float) -> None:
 
 
 def render(time):
-    draw_rectangle(50.0, 50.0, 10.0, 20.0)
+    draw_rectangle(0.0, 0.0, 50.0, 75.0)
 
 
 def update_viewport(window, width, height):
