@@ -59,19 +59,14 @@ def bajo_jajo():
 
     glBegin(GL_TRIANGLE_STRIP)
     for i in range(N - 1):
-        for j in range(N - 1):
+        for j in range(N):
             glColor3fv(colors[i][j])
             glVertex3fv(tab[i][j])
 
             glColor3fv(colors[i + 1][j])
             glVertex3fv(tab[i + 1][j])
 
-            glColor3fv(colors[i + 1][j])
-            glVertex3fv(tab[i][j + 1])
 
-            # trójkąt dopełniający
-            glColor3fv(colors[i + 1][j + 1])
-            glVertex3fv(tab[i + 1][j + 1])
 
     glEnd()
 
