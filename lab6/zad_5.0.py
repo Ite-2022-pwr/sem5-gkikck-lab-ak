@@ -57,7 +57,7 @@ for i in range(0, N):
         vertices[i][j][1] = y(u[i], v[j])
         vertices[i][j][2] = z(u[i], v[j])
 
-def bajo_jajo():
+def bajo_jojo():
     global vertices, u, v
 
     glBegin(GL_TRIANGLE_STRIP)
@@ -158,7 +158,7 @@ def render(time):
     glRotatef(theta, 0.0, 1.0, 0.0)
     glRotatef(phi, 1.0, 0.0, 0.0)
 
-    bajo_jajo()
+    bajo_jojo()
 
     glFlush()
 
