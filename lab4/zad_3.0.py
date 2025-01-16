@@ -20,6 +20,8 @@ phi = 0.0
 mouse_y_pos_old = 0
 delta_y = 0
 
+MOVED = False
+
 
 def startup():
     update_viewport(None, 400, 400)
@@ -87,6 +89,7 @@ def example_object():
 def render(time):
     global theta
     global phi
+    global MOVED
 
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
@@ -94,9 +97,10 @@ def render(time):
     gluLookAt(viewer[0], viewer[1], viewer[2],
               0.0, 0.0, 0.0, 0.0, 1.0, 0.0)
 
-    if left_mouse_button_pressed:
+    if left_mouse_button_pressed and MOVED:
         theta += delta_x * pix2angle
         phi += delta_y * pix2angle
+    MOVED = False
 
     glRotatef(theta, 0.0, 1.0, 0.0)
     glRotatef(phi, 1.0, 0.0, 0.0)
@@ -135,6 +139,9 @@ def mouse_motion_callback(window, x_pos, y_pos):
     global mouse_x_pos_old
     global delta_y
     global mouse_y_pos_old
+    global MOVED
+
+    MOVED = True
 
     delta_x = x_pos - mouse_x_pos_old
     mouse_x_pos_old = x_pos
